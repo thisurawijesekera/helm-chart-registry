@@ -5,7 +5,7 @@ Scales Kubernetes worker nodes within autoscaling groups.
 ## TL;DR
 
 ```console
-$ helm repo add autoscaler https://kubernetes.github.io/autoscaler
+$ helm repo add autoscaler https://github.com/thisurawijesekera/helm-chart-registry
 
 # Method 1 - Using Autodiscovery
 $ helm install my-release autoscaler/cluster-autoscaler \
