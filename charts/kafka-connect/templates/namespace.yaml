@@ -1,9 +1,0 @@
-{{- if .Values.create_namespace }}
-apiVersion: v1
-kind: Namespace
-metadata:
-  annotations: 
-   "helm.sh/hook": pre-install 
-   "helm.sh/hook-weight": "-5"
-  name: {{ .Values.namespace }}
-{{- end }}
