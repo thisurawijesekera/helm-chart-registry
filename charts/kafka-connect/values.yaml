@@ -1,0 +1,112 @@
+# -- Name of the Kafka connect cluster
+name: kafkaconnect-qa
+# -- Create namespace or not
+create_namespace: true
+# -- Namespace that Kafka connect cluster is going to install
+namespace: kafkaconnect-qa
+# -- environment name
+environment: qa
+
+strimzi-kafka-operator:
+  # -- whether strimzi operator to install
+  enabled: false
+  # -- whether opearator to affect in all namespaces
+  watchAnyNamespace: true
+  # -- namespace of the strimzi operator
+  namespace: kafkaconnect-qa
+
+
+ingress:
+  # -- enables the ingress
+  enabled: true
+  # -- type of ingress
+  type: LoadBalancer
+  # -- ingress class
+  class: nginx-private
+  annotations:
+  # -- ingress annotation
+    ingress.kubernetes.io/rewrite-target: /
+  # -- TLS settings for ingress   
+  tls: []
+  hosts:
+    # -- ingress host
+    - host: kafkaconnect-qa.bt-perso-cluster-nonprod.seed-sdr-np.us-east-1.aws.sysco.net # bt-perso-cluster-nonprod.seed-sdr-np.us-east-1.aws.sysco.net
+    
+# -- Container image reposiroty   
+image: sysco/kafkaconnect
+
+# -- Tag of the image 
+imageTag: latest
+
+createimage:
+  
+# -- Whether creating a new image or not  
+  enabled: true
+  
+  plugins:
+    # -- Name of the folder to store plugins (if creating a new image )   
+    - name: debezium-postgres-connector  # https://packages.confluent.io/maven/io/confluent/
+ 
+      artifacts: 
+
+        - type: #zip
+
+          url: #https://d1i4a15mxbxib1.cloudfront.net/api/plugins/debezium/debezium-connector-postgresql/versions/2.0.1/debezium-debezium-connector-postgresql-2.0.1.zip
+
+# -- Kafka bootstrap server name          
+bootstrapServers: lkc-3xgdm-em2jw.us-east-1.aws.glb.confluent.cloud:9092
+
+# -- Replica count for connect cluster
+replicaCount: 1
+# -- Provide a name in place of helm chart name
+nameOverride: ""
+# -- String to fully override "fullname"
+fullnameOverride: ""
+
+# -- Relevent Apache Kafka version https://docs.confluent.io/platform/current/installation/versions-interoperability.html#supported-versions-and-interoperability-for-cp
+version: 3.5.1
+
+# -- Group ID
+groupid: offer-data-aggregator-debezium-psql-listener
+topic:
+  # -- Name of offeset topic
+  offset: offer.sys.aggregator-psql-debezium-offset.0
+  # -- Replication factor of offeset topic
+  offsetfactor: -1
+
+  # -- Name of config topic
+  config: offer.sys.aggregator-psql-debezium-storage.0
+  # -- Replication factor of config topic  
+  configfactor: -1
+
+  # -- Name of status topic  
+  status: offer.sys.aggregator-psql-debezium-status.0
+  # -- Replication factor of status topic  
+  statusfactor: -1
+    
+# -- Kafka cluster username      
+username: KM4DOXZL5C5ZTCY7
+
+# -- Connect cluster root log level   
+loglevel: INFO
+
+# -- Custom settings for connect cluster  
+customSettings:
+
+#  auto.create.topics.enable: false
+
+externalSecrets:
+  # -- Refersh interval for external secrets password    
+  refreshInterval: 1h
+  # -- Kafka cluster password vault path   
+  key: "kv-v2-perso-np/kafka-connect/qa"
+  # -- Kafka cluster password vault key   
+  property: "KAFKA_SASL_PASSWORD"
+
+  dockerCreds:
+    # -- Enable if creating new image
+    enabled: true
+  
+  jfrogCreds:
+    # -- Enable if creating new image  
+    enabled: true

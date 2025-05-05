@@ -1,0 +1,15 @@
+apiVersion: v2
+name: kafka-connect-cluster
+description: A Helm chart to install kafka connect cluster for DIM applications deployments
+type: application
+version: 1.0.4
+appVersion: 1.0.4
+maintainers:
+  - name: DSRE
+    email: dsre@corp.sysco.com
+dependencies:
+- name: strimzi-kafka-operator
+  version: "0.38.0"
+  repository: "https://strimzi.io/charts"
+  condition: strimzi-kafka-operator.enabled
+ 
