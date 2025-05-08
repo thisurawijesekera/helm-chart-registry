@@ -1,22 +1,18 @@
-name: CD [dim-helm-charts] Release
+name: CD [TS-helm-charts] Release
  
 on:
   push:
     branches:
       - master 
- 
-env: 
-  VAULT_URL: https://prod-vault.sysco.net
-  VAULT_NAMESPACE: DIM
 
 concurrency:
-  group: dsre-kube-platform
+  group: ts-kube-platform
   cancel-in-progress: true
  
 jobs:
   Version: 
     name: Chart Version, Package and Publish
-    uses: SyscoCorporation/dim-dsre-reusable-workflows/.github/workflows/helm_release.yaml@master
+    uses: hisurawijesekera/reusable-workflows/.github/workflows/helm_release.yaml@master
     with:
-      REPO_URL: https://raw.githubusercontent.com/SyscoCorporation/dim-helm-charts/gh-pages
+      REPO_URL: https://raw.githubusercontent.com/thisurawijesekera/helm-chart-registry/gh-pages
     secrets: inherit       
