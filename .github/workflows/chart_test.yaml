@@ -9,7 +9,7 @@ on:
       - synchronize
     branches: 
       - master
-
+  
 concurrency:
   group: ts-kube-platform
   cancel-in-progress: true
@@ -17,9 +17,14 @@ concurrency:
 jobs:
   Scan:
     name: Terrascan
-    uses: thisurawijesekera/reusable-workflows/.github/workflows/terrascan.yaml@master
+    uses: thisurawijesekera/reusable-workflows/.github/workflows/terrascans.yaml@master
+    with:
+      TYPE: helm
+      VERSION: v3
+      POLICY: k8s
+      PATH: .
     secrets: inherit
-
+    
   lint-test:
     name: Lint & Test
     uses: thisurawijesekera/reusable-workflows/.github/workflows/helm_test.yaml@master
