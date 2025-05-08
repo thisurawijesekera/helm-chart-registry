@@ -1,4 +1,4 @@
-name: CI [dsre-helm-charts] 
+name: CI [ts-helm-charts] 
 
 on: 
   pull_request:
