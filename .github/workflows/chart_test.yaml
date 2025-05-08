@@ -11,23 +11,18 @@ on:
       - master
 
 concurrency:
-  group: dsre-kube-platform
+  group: ts-kube-platform
   cancel-in-progress: true
 
 jobs:
   Scan:
     name: Terrascan
-    uses: SyscoCorporation/dim-dsre-reusable-workflows/.github/workflows/terrascan.yaml@master
-    with:
-      TYPE: helm
-      VERSION: v3
-      POLICY: k8s
-      PATH: .
+    uses: thisurawijesekera/reusable-workflows/.github/workflows/terrascan.yaml@master
     secrets: inherit
 
   lint-test:
     name: Lint & Test
-    uses: SyscoCorporation/dim-dsre-reusable-workflows/.github/workflows/helm_test.yaml@master
+    uses: thisurawijesekera/reusable-workflows/.github/workflows/helm_test.yaml@master
     secrets: inherit
     needs: 
       - Scan     
