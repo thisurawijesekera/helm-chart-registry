@@ -1,14 +1,12 @@
 apiVersion: v2
-appVersion: 1.32.0
+appVersion: 0.0.1
 description: Scales Kubernetes worker nodes within autoscaling groups.
 engine: gotpl
-home: https://github.com/kubernetes/autoscaler
-icon: https://github.com/kubernetes/kubernetes/raw/master/logo/logo.png
 maintainers:
-  - email: guyjtempleton@googlemail.com
-    name: gjtempleton
+  - email: thisurawijesekera@gmail.com
+    name: TS
 name: cluster-autoscaler
 sources:
-  - https://github.com/kubernetes/autoscaler/tree/master/cluster-autoscaler
+  - https://github.com/thisurawijesekera/helm-chart-registry/tree/master/charts/cluster-autoscaler
 type: application
-version: 9.46.6
+version: 0.0.1
