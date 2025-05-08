@@ -8,6 +8,9 @@ on:
 concurrency:
   group: ts-kube-platform
   cancel-in-progress: true
+
+permissions:
+  contents: write
  
 jobs:
   Version: 
