@@ -12,7 +12,7 @@ concurrency:
 jobs:
   Version: 
     name: Chart Version, Package and Publish
-    uses: hisurawijesekera/reusable-workflows/.github/workflows/helm_release.yaml@master
+    uses: thisurawijesekera/reusable-workflows/.github/workflows/helm_release.yaml@master
     with:
       REPO_URL: https://raw.githubusercontent.com/thisurawijesekera/helm-chart-registry/gh-pages
     secrets: inherit       
