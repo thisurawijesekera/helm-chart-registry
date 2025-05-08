@@ -1,5 +1,5 @@
 name: CD [TS-helm-charts] Release
- 
+  
 on:
   push:
     branches:
