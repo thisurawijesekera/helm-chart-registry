@@ -1,0 +1,19 @@
+apiVersion: v1
+entries:
+  cluster-autoscaler:
+  - apiVersion: v2
+    appVersion: 0.0.1
+    created: "2025-05-08T10:08:47.429882727Z"
+    description: Scales Kubernetes worker nodes within autoscaling groups.
+    digest: dae06883e483e9cde4d2862566b1bad05f7a7512ae396cd127ba4298b050ae3f
+    maintainers:
+    - email: thisurawijesekera@gmail.com
+      name: TS
+    name: cluster-autoscaler
+    sources:
+    - https://github.com/thisurawijesekera/helm-chart-registry/tree/master/charts/cluster-autoscaler
+    type: application
+    urls:
+    - https://github.com/thisurawijesekera/helm-chart-registry/releases/download/cluster-autoscaler-0.0.1/cluster-autoscaler-0.0.1.tgz
+    version: 0.0.1
+generated: "2025-05-08T10:08:47.429889329Z"
