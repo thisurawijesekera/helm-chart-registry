@@ -9,7 +9,7 @@ on:
       - synchronize
     branches: 
       - master
-
+  
 concurrency:
   group: ts-kube-platform
   cancel-in-progress: true
