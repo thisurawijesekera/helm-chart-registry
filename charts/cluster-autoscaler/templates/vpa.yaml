@@ -3,7 +3,7 @@ apiVersion: autoscaling.k8s.io/v1
 kind: VerticalPodAutoscaler
 metadata:
   labels:
-{{ include "cluster-autoscaler.labels" . | indent 4 }}
+{{ include "cluster-autoscaler.labels" . | indent 5 }}
   name: {{ template "cluster-autoscaler.fullname" . }}
   namespace: {{ .Release.Namespace }}
 spec:
