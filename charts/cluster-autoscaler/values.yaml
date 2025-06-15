@@ -1,7 +1,7 @@
 ## Ref: https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#affinity-and-anti-affinity
 # affinity -- Affinity for pod assignment
 affinity: {}
- 
+
 # additionalLabels -- Labels to add to each object of the chart.
 additionalLabels: {}
 
