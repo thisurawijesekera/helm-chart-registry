@@ -3,7 +3,7 @@ entries:
   cluster-autoscaler:
   - apiVersion: v2
     appVersion: 0.0.3
-    created: "2025-06-15T12:58:54.864175244Z"
+    created: "2025-06-15T12:58:56.057105791Z"
     description: Scales Kubernetes worker nodes within autoscaling groups.
     digest: 913adf3577ba1f91ae6cf2a9bb4ba6e081e8c991df8b81dfcf38cf49d3eb2d2c
     maintainers:
@@ -14,11 +14,11 @@ entries:
     - https://github.com/thisurawijesekera/helm-chart-registry/tree/master/charts/cluster-autoscaler
     type: application
     urls:
-    - https://github.com/thisurawijesekera/helm-chart-registry/releases/download/cluster-autoscaler-0.0.3/cluster-autoscaler-0.0.3.tgz
+    - https://raw.githubusercontent.com/thisurawijesekera/helm-chart-registry/gh-pages/cluster-autoscaler-0.0.3.tgz
     version: 0.0.3
   - apiVersion: v2
     appVersion: 0.0.2
-    created: "2025-05-08T13:20:30.46321256Z"
+    created: "2025-06-15T12:58:56.0551709Z"
     description: Scales Kubernetes worker nodes within autoscaling groups.
     digest: 3e847b1e62d539f5188c8b85c87f9e682575f4c64fa2368fee126d92e8bc03d1
     maintainers:
@@ -31,4 +31,4 @@ entries:
     urls:
     - https://raw.githubusercontent.com/thisurawijesekera/helm-chart-registry/gh-pages/cluster-autoscaler-0.0.2.tgz
     version: 0.0.2
-generated: "2025-06-15T12:58:54.864187417Z"
+generated: "2025-06-15T12:58:56.052152052Z"
